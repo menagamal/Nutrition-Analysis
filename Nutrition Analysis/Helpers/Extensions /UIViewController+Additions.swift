@@ -1,0 +1,15 @@
+import Foundation
+import UIKit
+extension UIViewController{
+
+    func showError(error:String, btnAction:(()->Void)! = nil){
+        let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
+        let done = UIAlertAction(title: NSLocalizedString("ok", comment: "ok"), style: .default) { (action) in
+            if btnAction != nil {
+                btnAction()
+            }
+        }
+        alert.addAction(done)
+        self.present(alert,animated: true)
+    }
+}

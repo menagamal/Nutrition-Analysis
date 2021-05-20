@@ -8,6 +8,7 @@ target 'Nutrition Analysis' do
   # Pods for Nutrition Analysis
 pod 'RxSwift'
 pod 'RxCocoa'
+pod 'SDWebImage', '~> 4.0'
 
 
   target 'Nutrition AnalysisTests' do

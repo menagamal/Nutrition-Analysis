@@ -9,6 +9,39 @@
 /* Begin PBXBuildFile section */
 		342E5F4A8997C1B96CDC140B /* Pods_Nutrition_AnalysisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4EBF56E26A10EE29356AFB /* Pods_Nutrition_AnalysisTests.framework */; };
 		8F51699F0CDA1EE2C16EC830 /* Pods_Nutrition_Analysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259CA991F21B10EEAD949A40 /* Pods_Nutrition_Analysis.framework */; };
+		D0746A4F2656AC9500F95EAA /* DynamicBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A482656AC9500F95EAA /* DynamicBlurView.swift */; };
+		D0746A502656AC9500F95EAA /* CGImage+Accelerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A492656AC9500F95EAA /* CGImage+Accelerate.swift */; };
+		D0746A512656AC9500F95EAA /* BlurLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A4A2656AC9500F95EAA /* BlurLayer.swift */; };
+		D0746A522656AC9500F95EAA /* CaptureQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A4B2656AC9500F95EAA /* CaptureQuality.swift */; };
+		D0746A532656AC9500F95EAA /* CGContext+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A4C2656AC9500F95EAA /* CGContext+CGImage.swift */; };
+		D0746A542656AC9500F95EAA /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A4D2656AC9500F95EAA /* UIImage+Blur.swift */; };
+		D0746A552656AC9500F95EAA /* TrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A4E2656AC9500F95EAA /* TrackingMode.swift */; };
+		D0746A692656ACA800F95EAA /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A592656ACA700F95EAA /* InteractiveTransition.swift */; };
+		D0746A6A2656ACA800F95EAA /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A5A2656ACA700F95EAA /* PresentationController.swift */; };
+		D0746A6B2656ACA800F95EAA /* TransitionAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A5B2656ACA700F95EAA /* TransitionAnimations.swift */; };
+		D0746A6C2656ACA800F95EAA /* PopupDialogDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A5C2656ACA700F95EAA /* PopupDialogDefaultViewController.swift */; };
+		D0746A6D2656ACA800F95EAA /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A5D2656ACA700F95EAA /* TransitionAnimator.swift */; };
+		D0746A6E2656ACA800F95EAA /* UIImageView+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A5E2656ACA700F95EAA /* UIImageView+Calculations.swift */; };
+		D0746A6F2656ACA800F95EAA /* PopupDialogDefaultButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A5F2656ACA700F95EAA /* PopupDialogDefaultButtons.swift */; };
+		D0746A702656ACA800F95EAA /* PopupDialogDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A602656ACA700F95EAA /* PopupDialogDefaultView.swift */; };
+		D0746A712656ACA800F95EAA /* PopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A612656ACA700F95EAA /* PopupDialog.swift */; };
+		D0746A722656ACA800F95EAA /* PopupDialogOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A622656ACA700F95EAA /* PopupDialogOverlayView.swift */; };
+		D0746A732656ACA800F95EAA /* PopupDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A632656ACA700F95EAA /* PopupDialogButton.swift */; };
+		D0746A742656ACA800F95EAA /* UIViewController+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A642656ACA700F95EAA /* UIViewController+Visibility.swift */; };
+		D0746A752656ACA800F95EAA /* PopupDialog+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A652656ACA700F95EAA /* PopupDialog+Keyboard.swift */; };
+		D0746A762656ACA800F95EAA /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A662656ACA800F95EAA /* UIView+Animations.swift */; };
+		D0746A772656ACA800F95EAA /* PopupDialogContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A672656ACA800F95EAA /* PopupDialogContainerView.swift */; };
+		D0746A782656ACA800F95EAA /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A682656ACA800F95EAA /* PresentationManager.swift */; };
+		D0746A912656ACD000F95EAA /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A7D2656ACCF00F95EAA /* UIView+Extension.swift */; };
+		D0746A932656ACD000F95EAA /* UIButton+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A7F2656ACCF00F95EAA /* UIButton+Additions.swift */; };
+		D0746A942656ACD000F95EAA /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A802656ACCF00F95EAA /* UIFont+Additions.swift */; };
+		D0746A962656ACD000F95EAA /* UILabel+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A822656ACCF00F95EAA /* UILabel+Additions.swift */; };
+		D0746A972656ACD000F95EAA /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A832656ACCF00F95EAA /* UIView+Additions.swift */; };
+		D0746A9A2656ACD000F95EAA /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A862656ACD000F95EAA /* UIViewController+Additions.swift */; };
+		D0746A9B2656ACD000F95EAA /* UIFont+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A872656ACD000F95EAA /* UIFont+Extentions.swift */; };
+		D0746AA22656ACD000F95EAA /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A8E2656ACD000F95EAA /* UINavigationController+Extension.swift */; };
+		D0746AA32656ACD000F95EAA /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A8F2656ACD000F95EAA /* UIScrollView+Extension.swift */; };
+		D0746AA42656ACD000F95EAA /* UITextField+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A902656ACD000F95EAA /* UITextField+Additions.swift */; };
 		D0749E552655422A00A444F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0749E542655422A00A444F5 /* AppDelegate.swift */; };
 		D0749E572655422A00A444F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0749E562655422A00A444F5 /* SceneDelegate.swift */; };
 		D0749E592655422A00A444F5 /* NutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0749E582655422A00A444F5 /* NutritionViewController.swift */; };
@@ -47,6 +80,40 @@
 		8B52500C5930AC83AAED1D49 /* Pods-Nutrition AnalysisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutrition AnalysisTests.release.xcconfig"; path = "Target Support Files/Pods-Nutrition AnalysisTests/Pods-Nutrition AnalysisTests.release.xcconfig"; sourceTree = "<group>"; };
 		98E132C155137DC4849EDACB /* Pods_Nutrition_Analysis_Nutrition_AnalysisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nutrition_Analysis_Nutrition_AnalysisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98171584558B6FA28F8350A /* Pods-Nutrition Analysis-Nutrition AnalysisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutrition Analysis-Nutrition AnalysisUITests.debug.xcconfig"; path = "Target Support Files/Pods-Nutrition Analysis-Nutrition AnalysisUITests/Pods-Nutrition Analysis-Nutrition AnalysisUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D0746A472656AC9500F95EAA /* DynamicBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicBlurView.h; sourceTree = "<group>"; };
+		D0746A482656AC9500F95EAA /* DynamicBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBlurView.swift; sourceTree = "<group>"; };
+		D0746A492656AC9500F95EAA /* CGImage+Accelerate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Accelerate.swift"; sourceTree = "<group>"; };
+		D0746A4A2656AC9500F95EAA /* BlurLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurLayer.swift; sourceTree = "<group>"; };
+		D0746A4B2656AC9500F95EAA /* CaptureQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureQuality.swift; sourceTree = "<group>"; };
+		D0746A4C2656AC9500F95EAA /* CGContext+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+CGImage.swift"; sourceTree = "<group>"; };
+		D0746A4D2656AC9500F95EAA /* UIImage+Blur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Blur.swift"; sourceTree = "<group>"; };
+		D0746A4E2656AC9500F95EAA /* TrackingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingMode.swift; sourceTree = "<group>"; };
+		D0746A592656ACA700F95EAA /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
+		D0746A5A2656ACA700F95EAA /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		D0746A5B2656ACA700F95EAA /* TransitionAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimations.swift; sourceTree = "<group>"; };
+		D0746A5C2656ACA700F95EAA /* PopupDialogDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultViewController.swift; sourceTree = "<group>"; };
+		D0746A5D2656ACA700F95EAA /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
+		D0746A5E2656ACA700F95EAA /* UIImageView+Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Calculations.swift"; sourceTree = "<group>"; };
+		D0746A5F2656ACA700F95EAA /* PopupDialogDefaultButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultButtons.swift; sourceTree = "<group>"; };
+		D0746A602656ACA700F95EAA /* PopupDialogDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultView.swift; sourceTree = "<group>"; };
+		D0746A612656ACA700F95EAA /* PopupDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialog.swift; sourceTree = "<group>"; };
+		D0746A622656ACA700F95EAA /* PopupDialogOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogOverlayView.swift; sourceTree = "<group>"; };
+		D0746A632656ACA700F95EAA /* PopupDialogButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogButton.swift; sourceTree = "<group>"; };
+		D0746A642656ACA700F95EAA /* UIViewController+Visibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Visibility.swift"; sourceTree = "<group>"; };
+		D0746A652656ACA700F95EAA /* PopupDialog+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PopupDialog+Keyboard.swift"; sourceTree = "<group>"; };
+		D0746A662656ACA800F95EAA /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		D0746A672656ACA800F95EAA /* PopupDialogContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogContainerView.swift; sourceTree = "<group>"; };
+		D0746A682656ACA800F95EAA /* PresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
+		D0746A7D2656ACCF00F95EAA /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		D0746A7F2656ACCF00F95EAA /* UIButton+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Additions.swift"; sourceTree = "<group>"; };
+		D0746A802656ACCF00F95EAA /* UIFont+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
+		D0746A822656ACCF00F95EAA /* UILabel+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Additions.swift"; sourceTree = "<group>"; };
+		D0746A832656ACCF00F95EAA /* UIView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
+		D0746A862656ACD000F95EAA /* UIViewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
+		D0746A872656ACD000F95EAA /* UIFont+Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extentions.swift"; sourceTree = "<group>"; };
+		D0746A8E2656ACD000F95EAA /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		D0746A8F2656ACD000F95EAA /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		D0746A902656ACD000F95EAA /* UITextField+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Additions.swift"; sourceTree = "<group>"; };
 		D0749E512655422A00A444F5 /* Nutrition Analysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nutrition Analysis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0749E542655422A00A444F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0749E562655422A00A444F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +170,63 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D0746A452656AC7700F95EAA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D0746A7C2656ACAF00F95EAA /* Extensions  */,
+				D0746A462656AC7F00F95EAA /* Popup */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D0746A462656AC7F00F95EAA /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				D0746A4A2656AC9500F95EAA /* BlurLayer.swift */,
+				D0746A592656ACA700F95EAA /* InteractiveTransition.swift */,
+				D0746A612656ACA700F95EAA /* PopupDialog.swift */,
+				D0746A652656ACA700F95EAA /* PopupDialog+Keyboard.swift */,
+				D0746A632656ACA700F95EAA /* PopupDialogButton.swift */,
+				D0746A672656ACA800F95EAA /* PopupDialogContainerView.swift */,
+				D0746A5F2656ACA700F95EAA /* PopupDialogDefaultButtons.swift */,
+				D0746A602656ACA700F95EAA /* PopupDialogDefaultView.swift */,
+				D0746A5C2656ACA700F95EAA /* PopupDialogDefaultViewController.swift */,
+				D0746A622656ACA700F95EAA /* PopupDialogOverlayView.swift */,
+				D0746A5A2656ACA700F95EAA /* PresentationController.swift */,
+				D0746A682656ACA800F95EAA /* PresentationManager.swift */,
+				D0746A5B2656ACA700F95EAA /* TransitionAnimations.swift */,
+				D0746A5D2656ACA700F95EAA /* TransitionAnimator.swift */,
+				D0746A5E2656ACA700F95EAA /* UIImageView+Calculations.swift */,
+				D0746A662656ACA800F95EAA /* UIView+Animations.swift */,
+				D0746A642656ACA700F95EAA /* UIViewController+Visibility.swift */,
+				D0746A4B2656AC9500F95EAA /* CaptureQuality.swift */,
+				D0746A4C2656AC9500F95EAA /* CGContext+CGImage.swift */,
+				D0746A492656AC9500F95EAA /* CGImage+Accelerate.swift */,
+				D0746A472656AC9500F95EAA /* DynamicBlurView.h */,
+				D0746A482656AC9500F95EAA /* DynamicBlurView.swift */,
+				D0746A4E2656AC9500F95EAA /* TrackingMode.swift */,
+				D0746A4D2656AC9500F95EAA /* UIImage+Blur.swift */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
+		D0746A7C2656ACAF00F95EAA /* Extensions  */ = {
+			isa = PBXGroup;
+			children = (
+				D0746A7F2656ACCF00F95EAA /* UIButton+Additions.swift */,
+				D0746A802656ACCF00F95EAA /* UIFont+Additions.swift */,
+				D0746A872656ACD000F95EAA /* UIFont+Extentions.swift */,
+				D0746A822656ACCF00F95EAA /* UILabel+Additions.swift */,
+				D0746A8E2656ACD000F95EAA /* UINavigationController+Extension.swift */,
+				D0746A8F2656ACD000F95EAA /* UIScrollView+Extension.swift */,
+				D0746A902656ACD000F95EAA /* UITextField+Additions.swift */,
+				D0746A832656ACCF00F95EAA /* UIView+Additions.swift */,
+				D0746A7D2656ACCF00F95EAA /* UIView+Extension.swift */,
+				D0746A862656ACD000F95EAA /* UIViewController+Additions.swift */,
+			);
+			path = "Extensions ";
+			sourceTree = "<group>";
+		};
 		D0749E482655422A00A444F5 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +252,7 @@
 		D0749E532655422A00A444F5 /* Nutrition Analysis */ = {
 			isa = PBXGroup;
 			children = (
+				D0746A452656AC7700F95EAA /* Helpers */,
 				D0749E90265553D400A444F5 /* NutritionViewController */,
 				D0749E542655422A00A444F5 /* AppDelegate.swift */,
 				D0749E562655422A00A444F5 /* SceneDelegate.swift */,
@@ -441,10 +566,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0746A532656AC9500F95EAA /* CGContext+CGImage.swift in Sources */,
+				D0746A502656AC9500F95EAA /* CGImage+Accelerate.swift in Sources */,
 				D0749E592655422A00A444F5 /* NutritionViewController.swift in Sources */,
+				D0746A932656ACD000F95EAA /* UIButton+Additions.swift in Sources */,
+				D0746A6B2656ACA800F95EAA /* TransitionAnimations.swift in Sources */,
+				D0746AA32656ACD000F95EAA /* UIScrollView+Extension.swift in Sources */,
+				D0746A6E2656ACA800F95EAA /* UIImageView+Calculations.swift in Sources */,
+				D0746A6C2656ACA800F95EAA /* PopupDialogDefaultViewController.swift in Sources */,
+				D0746A9B2656ACD000F95EAA /* UIFont+Extentions.swift in Sources */,
+				D0746A512656AC9500F95EAA /* BlurLayer.swift in Sources */,
+				D0746A702656ACA800F95EAA /* PopupDialogDefaultView.swift in Sources */,
+				D0746A712656ACA800F95EAA /* PopupDialog.swift in Sources */,
+				D0746A4F2656AC9500F95EAA /* DynamicBlurView.swift in Sources */,
+				D0746A552656AC9500F95EAA /* TrackingMode.swift in Sources */,
+				D0746A522656AC9500F95EAA /* CaptureQuality.swift in Sources */,
+				D0746A962656ACD000F95EAA /* UILabel+Additions.swift in Sources */,
+				D0746AA22656ACD000F95EAA /* UINavigationController+Extension.swift in Sources */,
+				D0746A6D2656ACA800F95EAA /* TransitionAnimator.swift in Sources */,
+				D0746A772656ACA800F95EAA /* PopupDialogContainerView.swift in Sources */,
+				D0746A542656AC9500F95EAA /* UIImage+Blur.swift in Sources */,
+				D0746A732656ACA800F95EAA /* PopupDialogButton.swift in Sources */,
 				D0749E552655422A00A444F5 /* AppDelegate.swift in Sources */,
+				D0746A742656ACA800F95EAA /* UIViewController+Visibility.swift in Sources */,
+				D0746A6A2656ACA800F95EAA /* PresentationController.swift in Sources */,
+				D0746A782656ACA800F95EAA /* PresentationManager.swift in Sources */,
+				D0746AA42656ACD000F95EAA /* UITextField+Additions.swift in Sources */,
+				D0746A9A2656ACD000F95EAA /* UIViewController+Additions.swift in Sources */,
+				D0746A942656ACD000F95EAA /* UIFont+Additions.swift in Sources */,
+				D0746A722656ACA800F95EAA /* PopupDialogOverlayView.swift in Sources */,
+				D0746A6F2656ACA800F95EAA /* PopupDialogDefaultButtons.swift in Sources */,
+				D0746A912656ACD000F95EAA /* UIView+Extension.swift in Sources */,
 				D0749E572655422A00A444F5 /* SceneDelegate.swift in Sources */,
+				D0746A752656ACA800F95EAA /* PopupDialog+Keyboard.swift in Sources */,
+				D0746A972656ACD000F95EAA /* UIView+Additions.swift in Sources */,
+				D0746A762656ACA800F95EAA /* UIView+Animations.swift in Sources */,
 				D07EC1C3265693F300FEB1CA /* NutritionViewModel.swift in Sources */,
+				D0746A692656ACA800F95EAA /* InteractiveTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
