@@ -13,3 +13,12 @@ extension UIViewController{
         self.present(alert,animated: true)
     }
 }
+
+extension UIViewController {
+    static var identifier: String {
+        return String(describing: self)
+    }
+    class func instanceXib<T: UIViewController>() -> T {
+        return T(nibName: T.identifier, bundle: nil)
+    }
+}

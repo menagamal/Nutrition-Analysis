@@ -51,6 +51,11 @@
 		D0749E6C2655422B00A444F5 /* Nutrition_AnalysisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0749E6B2655422B00A444F5 /* Nutrition_AnalysisTests.swift */; };
 		D0749E772655422B00A444F5 /* Nutrition_AnalysisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0749E762655422B00A444F5 /* Nutrition_AnalysisUITests.swift */; };
 		D07EC1C3265693F300FEB1CA /* NutritionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EC1C2265693F300FEB1CA /* NutritionViewModel.swift */; };
+		D07FCC4426599FA9009AEF7D /* NutritionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07FCC4326599FA9009AEF7D /* NutritionBuilder.swift */; };
+		D07FCC502659A16C009AEF7D /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07FCC4F2659A16C009AEF7D /* BaseCoordinator.swift */; };
+		D07FCC5A2659A5BC009AEF7D /* NewRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07FCC582659A5BC009AEF7D /* NewRecipeViewController.swift */; };
+		D07FCC5B2659A5BC009AEF7D /* NewRecipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07FCC592659A5BC009AEF7D /* NewRecipeViewController.xib */; };
+		D0ECE8E12658A2A70035AD2F /* NutritionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ECE8E02658A2A70035AD2F /* NutritionCoordinator.swift */; };
 		E88A843466FC4F5AD4C728E5 /* Pods_Nutrition_Analysis_Nutrition_AnalysisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E132C155137DC4849EDACB /* Pods_Nutrition_Analysis_Nutrition_AnalysisUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +134,11 @@
 		D0749E762655422B00A444F5 /* Nutrition_AnalysisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition_AnalysisUITests.swift; sourceTree = "<group>"; };
 		D0749E782655422B00A444F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D07EC1C2265693F300FEB1CA /* NutritionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionViewModel.swift; sourceTree = "<group>"; };
+		D07FCC4326599FA9009AEF7D /* NutritionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionBuilder.swift; sourceTree = "<group>"; };
+		D07FCC4F2659A16C009AEF7D /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		D07FCC582659A5BC009AEF7D /* NewRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeViewController.swift; sourceTree = "<group>"; };
+		D07FCC592659A5BC009AEF7D /* NewRecipeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewRecipeViewController.xib; sourceTree = "<group>"; };
+		D0ECE8E02658A2A70035AD2F /* NutritionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionCoordinator.swift; sourceTree = "<group>"; };
 		DA5EAB1181DD1F68C6C5FE38 /* Pods-Nutrition Analysis-Nutrition AnalysisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutrition Analysis-Nutrition AnalysisUITests.release.xcconfig"; path = "Target Support Files/Pods-Nutrition Analysis-Nutrition AnalysisUITests/Pods-Nutrition Analysis-Nutrition AnalysisUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +237,15 @@
 			path = "Extensions ";
 			sourceTree = "<group>";
 		};
+		D0746AC12656B39500F95EAA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D07FCC572659A59F009AEF7D /* NewRecipe */,
+				D0749E90265553D400A444F5 /* NutritionViewController */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		D0749E482655422A00A444F5 = {
 			isa = PBXGroup;
 			children = (
@@ -252,8 +271,9 @@
 		D0749E532655422A00A444F5 /* Nutrition Analysis */ = {
 			isa = PBXGroup;
 			children = (
+				D07FCC4E2659A164009AEF7D /* Base */,
+				D0746AC12656B39500F95EAA /* Modules */,
 				D0746A452656AC7700F95EAA /* Helpers */,
-				D0749E90265553D400A444F5 /* NutritionViewController */,
 				D0749E542655422A00A444F5 /* AppDelegate.swift */,
 				D0749E562655422A00A444F5 /* SceneDelegate.swift */,
 				D0749E5D2655422B00A444F5 /* Assets.xcassets */,
@@ -284,6 +304,7 @@
 		D0749E90265553D400A444F5 /* NutritionViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D07FCC4226599F98009AEF7D /* Builder */,
 				D07EC1C9265695FC00FEB1CA /* Coordinator */,
 				D07EC1C8265695F200FEB1CA /* ViewModel */,
 				D07EC1C7265695E900FEB1CA /* View */,
@@ -311,8 +332,34 @@
 		D07EC1C9265695FC00FEB1CA /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				D0ECE8E02658A2A70035AD2F /* NutritionCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D07FCC4226599F98009AEF7D /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				D07FCC4326599FA9009AEF7D /* NutritionBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		D07FCC4E2659A164009AEF7D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D07FCC4F2659A16C009AEF7D /* BaseCoordinator.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D07FCC572659A59F009AEF7D /* NewRecipe */ = {
+			isa = PBXGroup;
+			children = (
+				D07FCC582659A5BC009AEF7D /* NewRecipeViewController.swift */,
+				D07FCC592659A5BC009AEF7D /* NewRecipeViewController.xib */,
+			);
+			path = NewRecipe;
 			sourceTree = "<group>";
 		};
 		F32454CDFDC373592A427FFD /* Pods */ = {
@@ -437,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0749E612655422B00A444F5 /* LaunchScreen.storyboard in Resources */,
+				D07FCC5B2659A5BC009AEF7D /* NewRecipeViewController.xib in Resources */,
 				D0749E5E2655422B00A444F5 /* Assets.xcassets in Resources */,
 				D0749E5C2655422A00A444F5 /* Main.storyboard in Resources */,
 			);
@@ -578,8 +626,11 @@
 				D0746A512656AC9500F95EAA /* BlurLayer.swift in Sources */,
 				D0746A702656ACA800F95EAA /* PopupDialogDefaultView.swift in Sources */,
 				D0746A712656ACA800F95EAA /* PopupDialog.swift in Sources */,
+				D07FCC4426599FA9009AEF7D /* NutritionBuilder.swift in Sources */,
 				D0746A4F2656AC9500F95EAA /* DynamicBlurView.swift in Sources */,
 				D0746A552656AC9500F95EAA /* TrackingMode.swift in Sources */,
+				D07FCC502659A16C009AEF7D /* BaseCoordinator.swift in Sources */,
+				D0ECE8E12658A2A70035AD2F /* NutritionCoordinator.swift in Sources */,
 				D0746A522656AC9500F95EAA /* CaptureQuality.swift in Sources */,
 				D0746A962656ACD000F95EAA /* UILabel+Additions.swift in Sources */,
 				D0746AA22656ACD000F95EAA /* UINavigationController+Extension.swift in Sources */,
@@ -603,6 +654,7 @@
 				D0746A762656ACA800F95EAA /* UIView+Animations.swift in Sources */,
 				D07EC1C3265693F300FEB1CA /* NutritionViewModel.swift in Sources */,
 				D0746A692656ACA800F95EAA /* InteractiveTransition.swift in Sources */,
+				D07FCC5A2659A5BC009AEF7D /* NewRecipeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

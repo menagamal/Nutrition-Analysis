@@ -7,15 +7,17 @@
 
 import Foundation
 import RxCocoa
-
+import RxSwift
 protocol NutritionViewRepresentation {
     // IF we are going to use Combine these two will be replaced with @Published variables
     typealias Input = (
-        recpieName: Driver<String>,
+        recpieName: Binder<String?>,
         ingredients: Driver<[String]>,
+        coordinator: NutritionCoordinator,
         ()
     )
     typealias Output = ()
+    typealias viewModelBuilder = (NutritionViewRepresentation.Input) -> NutritionViewModel
     
     var input: NutritionViewRepresentation.Input { get }
     var output: NutritionViewRepresentation.Output { get }
@@ -35,4 +37,9 @@ class NutritionViewModel: NutritionViewRepresentation {
     static func output(input: NutritionViewRepresentation.Input) -> NutritionViewRepresentation.Output {
         return ()
     }
+    
+    func addNewRecipe()  {
+        self.input.coordinator.present(to: .AddRecipe(recipeString: input.recpieName))
+    }
+    
 }
