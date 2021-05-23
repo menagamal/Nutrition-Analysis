@@ -9,7 +9,7 @@ target 'Nutrition Analysis' do
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'SDWebImage', '~> 4.0'
-
+pod 'Moya'
 
   target 'Nutrition AnalysisTests' do
     inherit! :search_paths

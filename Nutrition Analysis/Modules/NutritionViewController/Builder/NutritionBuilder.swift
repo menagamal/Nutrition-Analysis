@@ -12,7 +12,7 @@ class NutritionBuilder {
     
     func instance(viewController:NutritionViewController){
         viewController.viewModelBuilder = {
-            NutritionViewModel(input: (recpieName: $0.recpieName, ingredients: $0.ingredients, $0.coordinator,$0.3))
+            NutritionViewModel(input: (recpieName: $0.recpieName, $0.coordinator,$0.2))
         }
         viewController.coordinator = NutritionCoordinator(rootViewController: viewController)
     }

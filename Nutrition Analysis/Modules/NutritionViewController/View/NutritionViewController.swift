@@ -22,11 +22,36 @@ class NutritionViewController: UIViewController {
     var coordinator: NutritionCoordinator!
     
     private let disposeBag = DisposeBag()
-    var ingredients: Driver<[String]> = Driver.just([""])
-
+    private var lastContentOffset: CGFloat?
+    
+    private var maxImageHeight:CGFloat  = 500
+    private var minImageHeight:CGFloat  = 150
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NutritionBuilder().instance(viewController: self)
+        
+        
+        viewModel = viewModelBuilder((recpieName: labelRecipeTitle.rx.text, coordinator: coordinator, ()))
+        
+        registerCell()
+        bindUI()
+    }
+
+    @IBAction func addRecipe(_ sender: UIButton) {
+        viewModel?.addNewRecipe()
+    }
+
+    @IBAction func addIngredient(_ sender: UIButton) {
+        viewModel?.addIngredient()
+    }
+    
+    private func registerCell() {
+        tableViewIngredient.register(UINib(nibName: "IngredientTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+    }
+    private func bindUI(){
+        
         state.subscribe { [weak self] (event) in
             if let state = event.element {
                 switch state {
@@ -41,7 +66,6 @@ class NutritionViewController: UIViewController {
             
         }.disposed(by: disposeBag)
         
-        viewModel = viewModelBuilder((recpieName: labelRecipeTitle.rx.text, ingredients: ingredients, coordinator: coordinator, ()))
         labelRecipeTitle.rx.observe(String.self, "text").subscribe(onNext: { [weak self] text in
             if let text = text, !text.isEmpty {
                 self?.state.asObserver().on(.next(.AddIngredients))
@@ -49,13 +73,34 @@ class NutritionViewController: UIViewController {
                 self?.state.asObserver().on(.next(.AddRecipe))
             }
         }).disposed(by: disposeBag)
-    }
-
-    @IBAction func addRecipe(_ sender: UIButton) {
-        viewModel?.addNewRecipe()
-    }
-
-    @IBAction func addIngredient(_ sender: UIButton) {
+        
+        viewModel?.output.ingredients
+            .drive(tableViewIngredient.rx.items(cellIdentifier: "cell", cellType: IngredientTableViewCell.self)) { (_, ingredient, cell) in
+                cell.configure(with: ingredient)
+            }
+            .disposed(by: disposeBag)
+        
+        tableViewIngredient.rx.contentOffset.subscribe { [weak self] (event) in
+            guard let self = self else { return }
+            if let scrollOffset = event.element?.y {
+                if let lastContentOffset = self.lastContentOffset {
+                    if (lastContentOffset > scrollOffset) {
+                        if self.imageHeightConstraint.constant < self.maxImageHeight {
+                            self.imageHeightConstraint.constant += 40
+                            self.imageHeightConstraint.isActive = true
+                        }
+                    }
+                    else if (lastContentOffset < scrollOffset) {
+                        if self.imageHeightConstraint.constant > self.minImageHeight {
+                            self.imageHeightConstraint.constant -= 40
+                            self.imageHeightConstraint.isActive = true
+                        }
+                    }
+                } else {
+                    self.lastContentOffset = scrollOffset
+                }
+            }
+        }.disposed(by: disposeBag)
     }
 }
 
