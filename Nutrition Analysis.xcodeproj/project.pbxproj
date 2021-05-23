@@ -11,6 +11,7 @@
 		8F51699F0CDA1EE2C16EC830 /* Pods_Nutrition_Analysis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259CA991F21B10EEAD949A40 /* Pods_Nutrition_Analysis.framework */; };
 		D0682BB5265A3301007DCA3B /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0682BB3265A3301007DCA3B /* IngredientTableViewCell.swift */; };
 		D0682BB6265A3301007DCA3B /* IngredientTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0682BB4265A3301007DCA3B /* IngredientTableViewCell.xib */; };
+		D0682BE9265B02AD007DCA3B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0682BE8265B02AC007DCA3B /* LoadingView.swift */; };
 		D0746A4F2656AC9500F95EAA /* DynamicBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A482656AC9500F95EAA /* DynamicBlurView.swift */; };
 		D0746A502656AC9500F95EAA /* CGImage+Accelerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A492656AC9500F95EAA /* CGImage+Accelerate.swift */; };
 		D0746A512656AC9500F95EAA /* BlurLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0746A4A2656AC9500F95EAA /* BlurLayer.swift */; };
@@ -132,6 +133,7 @@
 		C98171584558B6FA28F8350A /* Pods-Nutrition Analysis-Nutrition AnalysisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nutrition Analysis-Nutrition AnalysisUITests.debug.xcconfig"; path = "Target Support Files/Pods-Nutrition Analysis-Nutrition AnalysisUITests/Pods-Nutrition Analysis-Nutrition AnalysisUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D0682BB3265A3301007DCA3B /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		D0682BB4265A3301007DCA3B /* IngredientTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientTableViewCell.xib; sourceTree = "<group>"; };
+		D0682BE8265B02AC007DCA3B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		D0746A472656AC9500F95EAA /* DynamicBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicBlurView.h; sourceTree = "<group>"; };
 		D0746A482656AC9500F95EAA /* DynamicBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBlurView.swift; sourceTree = "<group>"; };
 		D0746A492656AC9500F95EAA /* CGImage+Accelerate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Accelerate.swift"; sourceTree = "<group>"; };
@@ -279,9 +281,18 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		D0682BE7265B02A0007DCA3B /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				D0682BE8265B02AC007DCA3B /* LoadingView.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
 		D0746A452656AC7700F95EAA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D0682BE7265B02A0007DCA3B /* LoadingView */,
 				D0746A7C2656ACAF00F95EAA /* Extensions  */,
 				D0746A462656AC7F00F95EAA /* Popup */,
 			);
@@ -821,6 +832,7 @@
 				D0CED4D72659E211005A8993 /* NA.swift in Sources */,
 				D0746A522656AC9500F95EAA /* CaptureQuality.swift in Sources */,
 				D0746A962656ACD000F95EAA /* UILabel+Additions.swift in Sources */,
+				D0682BE9265B02AD007DCA3B /* LoadingView.swift in Sources */,
 				D0746AA22656ACD000F95EAA /* UINavigationController+Extension.swift in Sources */,
 				D0746A6D2656ACA800F95EAA /* TransitionAnimator.swift in Sources */,
 				D0CED4FB2659E211005A8993 /* TotalNutrientsKCal.swift in Sources */,

@@ -7,10 +7,10 @@
 
 import UIKit
 import RxSwift
-
+import RxRelay
 class NewRecipeViewController: UIViewController {
 
-    var recipeString: Binder<String?>!
+    var recipeString: BehaviorRelay<String>!
     
     @IBOutlet weak var addRecipeBtn: UIButton!
     @IBOutlet weak var receipeTextField: UITextField!
@@ -25,12 +25,14 @@ class NewRecipeViewController: UIViewController {
             guard let self = self , let text = self.receipeTextField.text else { return }
             self.addRecipeBtn.isEnabled = (!text.isEmpty)
             self.addRecipeBtn.alpha = (text.isEmpty ? 0.5 : 1.0)
-            self.recipeString.on(.next(text))
+            self.recipeString.accept(text)
         }.disposed(by: disposeBag)
     }
     
     @IBAction func addRecipeAction(_ sender: UIButton) {
-        recipeString.on(.next(receipeTextField.text))
+        if let text = receipeTextField.text {
+            recipeString.accept(text)
+        }
         self.dismiss(animated: true, completion: nil)
     }
     

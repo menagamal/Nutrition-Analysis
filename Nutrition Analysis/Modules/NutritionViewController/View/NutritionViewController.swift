@@ -11,6 +11,7 @@ import RxSwift
 
 class NutritionViewController: UIViewController {
 
+    @IBOutlet weak var analyzeBtn: UIButton!
     @IBOutlet weak var addRecipeView: UIView!
     @IBOutlet weak var ingredientsView: UIView!
     @IBOutlet weak var labelRecipeTitle: UILabel!
@@ -26,15 +27,19 @@ class NutritionViewController: UIViewController {
     
     private var maxImageHeight:CGFloat  = 500
     private var minImageHeight:CGFloat  = 150
+    private var recipeObservable = BehaviorRelay(value: "")
+    private var loadingIndicator: LoadingView?
+    
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NutritionBuilder().instance(viewController: self)
         
-        
-        viewModel = viewModelBuilder((recpieName: labelRecipeTitle.rx.text, coordinator: coordinator, ()))
-        
+        loadingIndicator = LoadingView(name: "loading", vc: self)
+        viewModel = viewModelBuilder((recpieName: recipeObservable, coordinator: coordinator))
+        analyzeBtn.isEnabled = false
+        analyzeBtn.alpha = 0.5
         registerCell()
         bindUI()
     }
@@ -47,9 +52,13 @@ class NutritionViewController: UIViewController {
         viewModel?.addIngredient()
     }
     
-    private func registerCell() {
-        tableViewIngredient.register(UINib(nibName: "IngredientTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+    @IBAction func analyzeAction(_ sender: UIButton) {
+        viewModel?.analyzeIngredients()
     }
+    private func registerCell() {
+        tableViewIngredient.register(UINib(nibName: "IngredientTableViewCell", bundle: nil), forCellReuseIdentifier: "IngredientTableViewCell")
+    }
+    
     private func bindUI(){
         
         state.subscribe { [weak self] (event) in
@@ -75,10 +84,16 @@ class NutritionViewController: UIViewController {
         }).disposed(by: disposeBag)
         
         viewModel?.output.ingredients
-            .drive(tableViewIngredient.rx.items(cellIdentifier: "cell", cellType: IngredientTableViewCell.self)) { (_, ingredient, cell) in
+            .drive(tableViewIngredient.rx.items(cellIdentifier: "IngredientTableViewCell", cellType: IngredientTableViewCell.self)) { (_, ingredient, cell) in
                 cell.configure(with: ingredient)
             }
             .disposed(by: disposeBag)
+        viewModel?.output.ingredients.asObservable().subscribe({ [weak self] (event) in
+            if let elements = event.element {
+                self?.analyzeBtn.isEnabled = !elements.isEmpty
+                self?.analyzeBtn.alpha = elements.isEmpty ? 0.5 : 1.0
+            }
+        }).disposed(by: disposeBag)
         
         tableViewIngredient.rx.contentOffset.subscribe { [weak self] (event) in
             guard let self = self else { return }
@@ -101,6 +116,20 @@ class NutritionViewController: UIViewController {
                 }
             }
         }.disposed(by: disposeBag)
+        
+        recipeObservable.bind(to: labelRecipeTitle.rx.text ).disposed(by: disposeBag)
+            
+        viewModel?.output.showLoading.subscribe({ [weak self] (event) in
+            if let flag = event.element , flag {
+                DispatchQueue.main.async {
+                    self?.loadingIndicator?.startLoading()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self?.loadingIndicator?.stopLoading()
+                }
+            }
+        }).disposed(by: disposeBag)
     }
 }
 

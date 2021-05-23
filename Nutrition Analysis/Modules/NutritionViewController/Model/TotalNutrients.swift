@@ -13,22 +13,24 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct TotalNutrients : Codable {
-	let eNERC_KCAL : ENERC_KCAL?
-	let fAT : FAT?
+    let fAT : FAT?
+    let cHOLE : CHOLE?
+    let nA : NA?
+    let cA : CA?
+    let sUGAR : SUGAR?
+    let fIBTG : FIBTG?
+    let fE : FE?
+    let pROCNT : PROCNT?
+    let tOCPHA : TOCPHA?
+    let k : K?
+
+
 	let fASAT : FASAT?
 	let fATRN : FATRN?
 	let fAMS : FAMS?
 	let fAPU : FAPU?
 	let cHOCDF : CHOCDF?
-	let fIBTG : FIBTG?
-	let sUGAR : SUGAR?
-	let pROCNT : PROCNT?
-	let cHOLE : CHOLE?
-	let nA : NA?
-	let cA : CA?
 	let mG : MG?
-	let k : K?
-	let fE : FE?
 	let zN : ZN?
 	let p : P?
 	let vITA_RAE : VITA_RAE?
@@ -42,28 +44,29 @@ struct TotalNutrients : Codable {
 	let fOLAC : FOLAC?
 	let vITB12 : VITB12?
 	let vITD : VITD?
-	let tOCPHA : TOCPHA?
 	let vITK1 : VITK1?
 	let wATER : WATER?
 
 	enum CodingKeys: String, CodingKey {
+        case fAT = "FAT"
+        case cHOLE = "CHOLE"
+        case nA = "NA"
+        case cA = "CA"
+        case fIBTG = "FIBTG"
+        case sUGAR = "SUGAR"
+        case fE = "FE"
+        case pROCNT = "PROCNT"
+        case k = "K"
+        case tOCPHA = "TOCPHA"
 
-		case eNERC_KCAL = "ENERC_KCAL"
-		case fAT = "FAT"
 		case fASAT = "FASAT"
 		case fATRN = "FATRN"
 		case fAMS = "FAMS"
 		case fAPU = "FAPU"
 		case cHOCDF = "CHOCDF"
-		case fIBTG = "FIBTG"
-		case sUGAR = "SUGAR"
-		case pROCNT = "PROCNT"
-		case cHOLE = "CHOLE"
-		case nA = "NA"
-		case cA = "CA"
+
+
 		case mG = "MG"
-		case k = "K"
-		case fE = "FE"
 		case zN = "ZN"
 		case p = "P"
 		case vITA_RAE = "VITA_RAE"
@@ -77,45 +80,46 @@ struct TotalNutrients : Codable {
 		case fOLAC = "FOLAC"
 		case vITB12 = "VITB12"
 		case vITD = "VITD"
-		case tOCPHA = "TOCPHA"
 		case vITK1 = "VITK1"
 		case wATER = "WATER"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		eNERC_KCAL = try values.decodeIfPresent(ENERC_KCAL.self, forKey: .eNERC_KCAL)
-		fAT = try values.decodeIfPresent(FAT.self, forKey: .fAT)
-		fASAT = try values.decodeIfPresent(FASAT.self, forKey: .fASAT)
-		fATRN = try values.decodeIfPresent(FATRN.self, forKey: .fATRN)
-		fAMS = try values.decodeIfPresent(FAMS.self, forKey: .fAMS)
-		fAPU = try values.decodeIfPresent(FAPU.self, forKey: .fAPU)
-		cHOCDF = try values.decodeIfPresent(CHOCDF.self, forKey: .cHOCDF)
-		fIBTG = try values.decodeIfPresent(FIBTG.self, forKey: .fIBTG)
-		sUGAR = try values.decodeIfPresent(SUGAR.self, forKey: .sUGAR)
-		pROCNT = try values.decodeIfPresent(PROCNT.self, forKey: .pROCNT)
-		cHOLE = try values.decodeIfPresent(CHOLE.self, forKey: .cHOLE)
-		nA = try values.decodeIfPresent(NA.self, forKey: .nA)
-		cA = try values.decodeIfPresent(CA.self, forKey: .cA)
-		mG = try values.decodeIfPresent(MG.self, forKey: .mG)
-		k = try values.decodeIfPresent(K.self, forKey: .k)
-		fE = try values.decodeIfPresent(FE.self, forKey: .fE)
-		zN = try values.decodeIfPresent(ZN.self, forKey: .zN)
-		p = try values.decodeIfPresent(P.self, forKey: .p)
-		vITA_RAE = try values.decodeIfPresent(VITA_RAE.self, forKey: .vITA_RAE)
-		vITC = try values.decodeIfPresent(VITC.self, forKey: .vITC)
-		tHIA = try values.decodeIfPresent(THIA.self, forKey: .tHIA)
-		rIBF = try values.decodeIfPresent(RIBF.self, forKey: .rIBF)
-		nIA = try values.decodeIfPresent(NIA.self, forKey: .nIA)
-		vITB6A = try values.decodeIfPresent(VITB6A.self, forKey: .vITB6A)
-		fOLDFE = try values.decodeIfPresent(FOLDFE.self, forKey: .fOLDFE)
-		fOLFD = try values.decodeIfPresent(FOLFD.self, forKey: .fOLFD)
-		fOLAC = try values.decodeIfPresent(FOLAC.self, forKey: .fOLAC)
-		vITB12 = try values.decodeIfPresent(VITB12.self, forKey: .vITB12)
-		vITD = try values.decodeIfPresent(VITD.self, forKey: .vITD)
-		tOCPHA = try values.decodeIfPresent(TOCPHA.self, forKey: .tOCPHA)
-		vITK1 = try values.decodeIfPresent(VITK1.self, forKey: .vITK1)
-		wATER = try values.decodeIfPresent(WATER.self, forKey: .wATER)
+        
+        fAT = try values.decodeIfPresent(FAT.self, forKey: .fAT) ?? nil
+        cHOLE = try values.decodeIfPresent(CHOLE.self, forKey: .cHOLE) ?? nil
+        nA = try values.decodeIfPresent(NA.self, forKey: .nA) ?? nil
+        sUGAR = try values.decodeIfPresent(SUGAR.self, forKey: .sUGAR) ?? nil
+        fIBTG = try values.decodeIfPresent(FIBTG.self, forKey: .fIBTG) ?? nil
+        pROCNT = try values.decodeIfPresent(PROCNT.self, forKey: .pROCNT) ?? nil
+        fE = try values.decodeIfPresent(FE.self, forKey: .fE) ?? nil
+        tOCPHA = try values.decodeIfPresent(TOCPHA.self, forKey: .tOCPHA) ?? nil
+        k = try values.decodeIfPresent(K.self, forKey: .k) ?? nil
+        cA = try values.decodeIfPresent(CA.self, forKey: .cA) ?? nil
+
+		fASAT = try values.decodeIfPresent(FASAT.self, forKey: .fASAT) ?? nil
+		fATRN = try values.decodeIfPresent(FATRN.self, forKey: .fATRN) ?? nil
+		fAMS = try values.decodeIfPresent(FAMS.self, forKey: .fAMS) ?? nil
+		fAPU = try values.decodeIfPresent(FAPU.self, forKey: .fAPU) ?? nil
+		cHOCDF = try values.decodeIfPresent(CHOCDF.self, forKey: .cHOCDF) ?? nil
+
+		mG = try values.decodeIfPresent(MG.self, forKey: .mG) ?? nil
+		zN = try values.decodeIfPresent(ZN.self, forKey: .zN) ?? nil
+		p = try values.decodeIfPresent(P.self, forKey: .p) ?? nil
+		vITA_RAE = try values.decodeIfPresent(VITA_RAE.self, forKey: .vITA_RAE) ?? nil
+		vITC = try values.decodeIfPresent(VITC.self, forKey: .vITC) ?? nil
+		tHIA = try values.decodeIfPresent(THIA.self, forKey: .tHIA) ?? nil
+		rIBF = try values.decodeIfPresent(RIBF.self, forKey: .rIBF) ?? nil
+		nIA = try values.decodeIfPresent(NIA.self, forKey: .nIA) ?? nil
+		vITB6A = try values.decodeIfPresent(VITB6A.self, forKey: .vITB6A) ?? nil
+		fOLDFE = try values.decodeIfPresent(FOLDFE.self, forKey: .fOLDFE) ?? nil
+		fOLFD = try values.decodeIfPresent(FOLFD.self, forKey: .fOLFD) ?? nil
+		fOLAC = try values.decodeIfPresent(FOLAC.self, forKey: .fOLAC) ?? nil
+		vITB12 = try values.decodeIfPresent(VITB12.self, forKey: .vITB12) ?? nil
+		vITD = try values.decodeIfPresent(VITD.self, forKey: .vITD) ?? nil
+		vITK1 = try values.decodeIfPresent(VITK1.self, forKey: .vITK1) ?? nil
+		wATER = try values.decodeIfPresent(WATER.self, forKey: .wATER) ?? nil
 	}
 
 }

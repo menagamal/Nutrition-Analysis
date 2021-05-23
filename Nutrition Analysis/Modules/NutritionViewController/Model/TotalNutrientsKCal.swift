@@ -13,14 +13,12 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct TotalNutrientsKCal : Codable {
-	let eNERC_KCAL : ENERC_KCAL?
 	let pROCNT_KCAL : PROCNT_KCAL?
 	let fAT_KCAL : FAT_KCAL?
 	let cHOCDF_KCAL : CHOCDF_KCAL?
 
 	enum CodingKeys: String, CodingKey {
 
-		case eNERC_KCAL = "ENERC_KCAL"
 		case pROCNT_KCAL = "PROCNT_KCAL"
 		case fAT_KCAL = "FAT_KCAL"
 		case cHOCDF_KCAL = "CHOCDF_KCAL"
@@ -28,10 +26,9 @@ struct TotalNutrientsKCal : Codable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		eNERC_KCAL = try values.decodeIfPresent(ENERC_KCAL.self, forKey: .eNERC_KCAL)
-		pROCNT_KCAL = try values.decodeIfPresent(PROCNT_KCAL.self, forKey: .pROCNT_KCAL)
-		fAT_KCAL = try values.decodeIfPresent(FAT_KCAL.self, forKey: .fAT_KCAL)
-		cHOCDF_KCAL = try values.decodeIfPresent(CHOCDF_KCAL.self, forKey: .cHOCDF_KCAL)
+		pROCNT_KCAL = try values.decodeIfPresent(PROCNT_KCAL.self, forKey: .pROCNT_KCAL) ?? nil
+		fAT_KCAL = try values.decodeIfPresent(FAT_KCAL.self, forKey: .fAT_KCAL) ?? nil
+		cHOCDF_KCAL = try values.decodeIfPresent(CHOCDF_KCAL.self, forKey: .cHOCDF_KCAL) ?? nil
 	}
 
 }

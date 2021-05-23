@@ -13,7 +13,6 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct TotalDaily : Codable {
-	let eNERC_KCAL : ENERC_KCAL?
 	let fAT : FAT?
 	let fASAT : FASAT?
 	let cHOCDF : CHOCDF?
@@ -41,7 +40,6 @@ struct TotalDaily : Codable {
 
 	enum CodingKeys: String, CodingKey {
 
-		case eNERC_KCAL = "ENERC_KCAL"
 		case fAT = "FAT"
 		case fASAT = "FASAT"
 		case cHOCDF = "CHOCDF"
@@ -70,31 +68,30 @@ struct TotalDaily : Codable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		eNERC_KCAL = try values.decodeIfPresent(ENERC_KCAL.self, forKey: .eNERC_KCAL)
-		fAT = try values.decodeIfPresent(FAT.self, forKey: .fAT)
-		fASAT = try values.decodeIfPresent(FASAT.self, forKey: .fASAT)
-		cHOCDF = try values.decodeIfPresent(CHOCDF.self, forKey: .cHOCDF)
-		fIBTG = try values.decodeIfPresent(FIBTG.self, forKey: .fIBTG)
-		pROCNT = try values.decodeIfPresent(PROCNT.self, forKey: .pROCNT)
-		cHOLE = try values.decodeIfPresent(CHOLE.self, forKey: .cHOLE)
-		nA = try values.decodeIfPresent(NA.self, forKey: .nA)
-		cA = try values.decodeIfPresent(CA.self, forKey: .cA)
-		mG = try values.decodeIfPresent(MG.self, forKey: .mG)
-		k = try values.decodeIfPresent(K.self, forKey: .k)
-		fE = try values.decodeIfPresent(FE.self, forKey: .fE)
-		zN = try values.decodeIfPresent(ZN.self, forKey: .zN)
-		p = try values.decodeIfPresent(P.self, forKey: .p)
-		vITA_RAE = try values.decodeIfPresent(VITA_RAE.self, forKey: .vITA_RAE)
-		vITC = try values.decodeIfPresent(VITC.self, forKey: .vITC)
-		tHIA = try values.decodeIfPresent(THIA.self, forKey: .tHIA)
-		rIBF = try values.decodeIfPresent(RIBF.self, forKey: .rIBF)
-		nIA = try values.decodeIfPresent(NIA.self, forKey: .nIA)
-		vITB6A = try values.decodeIfPresent(VITB6A.self, forKey: .vITB6A)
-		fOLDFE = try values.decodeIfPresent(FOLDFE.self, forKey: .fOLDFE)
-		vITB12 = try values.decodeIfPresent(VITB12.self, forKey: .vITB12)
-		vITD = try values.decodeIfPresent(VITD.self, forKey: .vITD)
-		tOCPHA = try values.decodeIfPresent(TOCPHA.self, forKey: .tOCPHA)
-		vITK1 = try values.decodeIfPresent(VITK1.self, forKey: .vITK1)
+		fAT = try values.decodeIfPresent(FAT.self, forKey: .fAT) ?? nil
+		fASAT = try values.decodeIfPresent(FASAT.self, forKey: .fASAT) ?? nil
+		cHOCDF = try values.decodeIfPresent(CHOCDF.self, forKey: .cHOCDF) ?? nil
+		fIBTG = try values.decodeIfPresent(FIBTG.self, forKey: .fIBTG) ?? nil
+		pROCNT = try values.decodeIfPresent(PROCNT.self, forKey: .pROCNT) ?? nil
+		cHOLE = try values.decodeIfPresent(CHOLE.self, forKey: .cHOLE) ?? nil
+		nA = try values.decodeIfPresent(NA.self, forKey: .nA) ?? nil
+		cA = try values.decodeIfPresent(CA.self, forKey: .cA) ?? nil
+		mG = try values.decodeIfPresent(MG.self, forKey: .mG) ?? nil
+		k = try values.decodeIfPresent(K.self, forKey: .k) ?? nil
+		fE = try values.decodeIfPresent(FE.self, forKey: .fE) ?? nil
+		zN = try values.decodeIfPresent(ZN.self, forKey: .zN) ?? nil
+		p = try values.decodeIfPresent(P.self, forKey: .p) ?? nil
+		vITA_RAE = try values.decodeIfPresent(VITA_RAE.self, forKey: .vITA_RAE) ?? nil
+		vITC = try values.decodeIfPresent(VITC.self, forKey: .vITC) ?? nil
+		tHIA = try values.decodeIfPresent(THIA.self, forKey: .tHIA) ?? nil
+		rIBF = try values.decodeIfPresent(RIBF.self, forKey: .rIBF) ?? nil
+		nIA = try values.decodeIfPresent(NIA.self, forKey: .nIA) ?? nil
+		vITB6A = try values.decodeIfPresent(VITB6A.self, forKey: .vITB6A) ?? nil
+		fOLDFE = try values.decodeIfPresent(FOLDFE.self, forKey: .fOLDFE) ?? nil
+		vITB12 = try values.decodeIfPresent(VITB12.self, forKey: .vITB12) ?? nil
+		vITD = try values.decodeIfPresent(VITD.self, forKey: .vITD) ?? nil
+		tOCPHA = try values.decodeIfPresent(TOCPHA.self, forKey: .tOCPHA) ?? nil
+		vITK1 = try values.decodeIfPresent(VITK1.self, forKey: .vITK1) ?? nil
 	}
 
 }

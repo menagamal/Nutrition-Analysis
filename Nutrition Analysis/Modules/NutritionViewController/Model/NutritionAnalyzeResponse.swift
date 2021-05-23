@@ -29,16 +29,16 @@ struct NutritionAnalyzeResponse : Codable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		uri = try values.decodeIfPresent(String.self, forKey: .uri)
-		yield = try values.decodeIfPresent(Double.self, forKey: .yield)
-		calories = try values.decodeIfPresent(Int.self, forKey: .calories)
-		totalWeight = try values.decodeIfPresent(Double.self, forKey: .totalWeight)
-		dietLabels = try values.decodeIfPresent([String].self, forKey: .dietLabels)
-		healthLabels = try values.decodeIfPresent([String].self, forKey: .healthLabels)
-		cautions = try values.decodeIfPresent([String].self, forKey: .cautions)
-		totalNutrients = try values.decodeIfPresent(TotalNutrients.self, forKey: .totalNutrients)
-		totalDaily = try values.decodeIfPresent(TotalDaily.self, forKey: .totalDaily)
-		totalNutrientsKCal = try values.decodeIfPresent(TotalNutrientsKCal.self, forKey: .totalNutrientsKCal)
+		uri = try values.decodeIfPresent(String.self, forKey: .uri) ?? nil
+		yield = try values.decodeIfPresent(Double.self, forKey: .yield) ?? nil
+		calories = try values.decodeIfPresent(Int.self, forKey: .calories) ?? nil
+		totalWeight = try values.decodeIfPresent(Double.self, forKey: .totalWeight) ?? nil
+		dietLabels = try values.decodeIfPresent([String].self, forKey: .dietLabels) ?? nil
+		healthLabels = try values.decodeIfPresent([String].self, forKey: .healthLabels) ?? nil
+		cautions = try values.decodeIfPresent([String].self, forKey: .cautions) ?? nil
+		totalNutrients = try values.decodeIfPresent(TotalNutrients.self, forKey: .totalNutrients) ?? nil
+		totalDaily = try values.decodeIfPresent(TotalDaily.self, forKey: .totalDaily) ?? nil
+		totalNutrientsKCal = try values.decodeIfPresent(TotalNutrientsKCal.self, forKey: .totalNutrientsKCal) ?? nil
 	}
 
 }

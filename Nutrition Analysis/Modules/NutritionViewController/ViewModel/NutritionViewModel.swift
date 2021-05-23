@@ -11,14 +11,14 @@ import RxSwift
 protocol NutritionViewRepresentation {
     // IF we are going to use Combine these two will be replaced with @Published variables
     typealias Input = (
-        recpieName: Binder<String?>,
-        coordinator: NutritionCoordinator,
-        ()
+        recpieName: BehaviorRelay<String>,
+        coordinator: NutritionCoordinator
     )
     typealias viewModelBuilder = (NutritionViewRepresentation.Input) -> NutritionViewModel
     
     var input: NutritionViewRepresentation.Input { get }
     
+    var output: NutritionViewModel.Output { get }
 }
 
 class NutritionViewModel: NutritionViewRepresentation {
@@ -30,14 +30,18 @@ class NutritionViewModel: NutritionViewRepresentation {
     private let disposeBag = DisposeBag()
     
     private var ingredients = BehaviorRelay(value: [String]())
-
+    
     struct Output {
            let ingredients: Driver<[String]>
+            let showLoading = BehaviorRelay<Bool>(value: false)
     }
+    
     let output: Output
 
-
-    init(input: NutritionViewRepresentation.Input) {
+    private var nutritionService: NutritionAPIs
+    
+    init(input: NutritionViewRepresentation.Input,nutritionService: NutritionAPIs) {
+        self.nutritionService = nutritionService
         self.input = input
         self.output = Output(ingredients: ingredients.asDriver())
         self.currentIngredient.subscribe { [weak self ](event) in
@@ -58,6 +62,18 @@ class NutritionViewModel: NutritionViewRepresentation {
     
     func addIngredient()  {
         self.input.coordinator.present(to: .AddIngredient(bindable: currentIngredient))
+    }
+    func analyzeIngredients()  {
+        output.showLoading.accept(true)
+        nutritionService.analyzeRecipe(receipeName: input.recpieName.value, recipeIngredients: ingredients.value)
+            .subscribe(onNext: {[weak self] (response) in
+                // MOVE TO DETAILS
+                self?.output.showLoading.accept(false)
+            },onError: { [weak self]( error) in
+                //SHOW ERROR
+                self?.output.showLoading.accept(false)
+            }).disposed(by: disposeBag)
+
     }
     
 }

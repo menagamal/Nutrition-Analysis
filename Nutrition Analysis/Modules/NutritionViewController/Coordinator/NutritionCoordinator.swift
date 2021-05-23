@@ -13,7 +13,7 @@ import RxCocoa
 class NutritionCoordinator: BaseCoordinator {
     
     enum Destination {
-        case AddRecipe(recipeString: Binder<String?>)
+        case AddRecipe(recipeString: BehaviorRelay<String>)
         case AddIngredient(bindable: BehaviorRelay<String>)
     }
     
@@ -43,7 +43,7 @@ class NutritionCoordinator: BaseCoordinator {
     
 }
 private extension NutritionCoordinator {
-    func AddRecipe(recipeString: Binder<String?>) -> UIViewController {
+    func AddRecipe(recipeString: BehaviorRelay<String>) -> UIViewController {
         let vc: NewRecipeViewController = UIViewController.instanceXib()
         vc.recipeString = recipeString
         let dialog = PopupDialog(viewController: vc, buttonAlignment: .horizontal, transitionStyle: .zoomIn, preferredWidth: 340, gestureDismissal: true, hideStatusBar: true, completion: nil)

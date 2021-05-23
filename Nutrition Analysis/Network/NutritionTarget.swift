@@ -45,13 +45,17 @@ extension NutritionTarget: TargetType {
         switch self {
         case .analyze(let receipeName, let recipeIngredients):
             var parameters = [String:Any]()
-            parameters = ["app_id":"2fb62be8",
-                          "app_key":"be91372375ea1cb5c76529e5b90a2a4a",
-                          "title":receipeName,
-                          "ingr":recipeIngredients
+            parameters = [
+                "title":receipeName,
+                "ingr":recipeIngredients
             ]
-            
-            return .requestParameters(parameters: parameters, encoding: Alamofire.JSONEncoding.default)
+            var urlParams =  [String:Any]()
+            urlParams = [
+                "app_id":"2fb62be8",
+                "app_key":"be91372375ea1cb5c76529e5b90a2a4a"
+                
+            ]
+            return .requestCompositeParameters(bodyParameters: parameters, bodyEncoding: JSONEncoding.default, urlParameters: urlParams)
         }
     }
     
