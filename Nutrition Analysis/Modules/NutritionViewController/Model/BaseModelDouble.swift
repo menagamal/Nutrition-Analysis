@@ -12,9 +12,9 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct CHOCDF_KCAL : Codable {
+struct BaseModelDouble : Codable {
 	let label : String?
-	let quantity : Int?
+	let quantity : Double?
 	let unit : String?
 
 	enum CodingKeys: String, CodingKey {
@@ -27,7 +27,7 @@ struct CHOCDF_KCAL : Codable {
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		label = try values.decodeIfPresent(String.self, forKey: .label)
-		quantity = try values.decodeIfPresent(Int.self, forKey: .quantity)
+		quantity = try values.decodeIfPresent(Double.self, forKey: .quantity)
 		unit = try values.decodeIfPresent(String.self, forKey: .unit)
 	}
 
