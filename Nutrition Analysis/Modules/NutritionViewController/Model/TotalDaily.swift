@@ -13,30 +13,30 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct TotalDaily : Codable {
-	let fAT : FAT?
-	let fASAT : FASAT?
-	let cHOCDF : CHOCDF?
-	let fIBTG : FIBTG?
-	let pROCNT : PROCNT?
-	let cHOLE : CHOLE?
-	let nA : NA?
-	let cA : CA?
-	let mG : MG?
-	let k : K?
-	let fE : FE?
-	let zN : ZN?
-	let p : P?
-	let vITA_RAE : VITA_RAE?
-	let vITC : VITC?
-	let tHIA : THIA?
-	let rIBF : RIBF?
-	let nIA : NIA?
-	let vITB6A : VITB6A?
-	let fOLDFE : FOLDFE?
-	let vITB12 : VITB12?
-	let vITD : VITD?
-	let tOCPHA : TOCPHA?
-	let vITK1 : VITK1?
+	let fAT : BaseModelDouble?
+	let fASAT : BaseModelDouble?
+	let cHOCDF : BaseModelDouble?
+	let fIBTG : BaseModelDouble?
+	let pROCNT : BaseModelDouble?
+	let cHOLE : BaseModelDouble?
+	let nA : BaseModelDouble?
+	let cA : BaseModelDouble?
+	let mG : BaseModelDouble?
+	let k : BaseModelDouble?
+	let fE : BaseModelDouble?
+	let zN : BaseModelDouble?
+	let p : BaseModelDouble?
+	let vITA_RAE : BaseModelDouble?
+	let vITC : BaseModelDouble?
+	let tHIA : BaseModelDouble?
+	let rIBF : BaseModelDouble?
+	let nIA : BaseModelDouble?
+	let vITB6A : BaseModelDouble?
+	let fOLDFE : BaseModelDouble?
+	let vITB12 : BaseModelDouble?
+	let vITD : BaseModelDouble?
+	let tOCPHA : BaseModelDouble?
+	let vITK1 : BaseModelDouble?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -68,30 +68,30 @@ struct TotalDaily : Codable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		fAT = try values.decodeIfPresent(FAT.self, forKey: .fAT) ?? nil
-		fASAT = try values.decodeIfPresent(FASAT.self, forKey: .fASAT) ?? nil
-		cHOCDF = try values.decodeIfPresent(CHOCDF.self, forKey: .cHOCDF) ?? nil
-		fIBTG = try values.decodeIfPresent(FIBTG.self, forKey: .fIBTG) ?? nil
-		pROCNT = try values.decodeIfPresent(PROCNT.self, forKey: .pROCNT) ?? nil
-		cHOLE = try values.decodeIfPresent(CHOLE.self, forKey: .cHOLE) ?? nil
-		nA = try values.decodeIfPresent(NA.self, forKey: .nA) ?? nil
-		cA = try values.decodeIfPresent(CA.self, forKey: .cA) ?? nil
-		mG = try values.decodeIfPresent(MG.self, forKey: .mG) ?? nil
-		k = try values.decodeIfPresent(K.self, forKey: .k) ?? nil
-		fE = try values.decodeIfPresent(FE.self, forKey: .fE) ?? nil
-		zN = try values.decodeIfPresent(ZN.self, forKey: .zN) ?? nil
-		p = try values.decodeIfPresent(P.self, forKey: .p) ?? nil
-		vITA_RAE = try values.decodeIfPresent(VITA_RAE.self, forKey: .vITA_RAE) ?? nil
-		vITC = try values.decodeIfPresent(VITC.self, forKey: .vITC) ?? nil
-		tHIA = try values.decodeIfPresent(THIA.self, forKey: .tHIA) ?? nil
-		rIBF = try values.decodeIfPresent(RIBF.self, forKey: .rIBF) ?? nil
-		nIA = try values.decodeIfPresent(NIA.self, forKey: .nIA) ?? nil
-		vITB6A = try values.decodeIfPresent(VITB6A.self, forKey: .vITB6A) ?? nil
-		fOLDFE = try values.decodeIfPresent(FOLDFE.self, forKey: .fOLDFE) ?? nil
-		vITB12 = try values.decodeIfPresent(VITB12.self, forKey: .vITB12) ?? nil
-		vITD = try values.decodeIfPresent(VITD.self, forKey: .vITD) ?? nil
-		tOCPHA = try values.decodeIfPresent(TOCPHA.self, forKey: .tOCPHA) ?? nil
-		vITK1 = try values.decodeIfPresent(VITK1.self, forKey: .vITK1) ?? nil
+		fAT = try values.decodeIfPresent(BaseModelDouble.self, forKey: .fAT) ?? nil
+		fASAT = try values.decodeIfPresent(BaseModelDouble.self, forKey: .fASAT) ?? nil
+		cHOCDF = try values.decodeIfPresent(BaseModelDouble.self, forKey: .cHOCDF) ?? nil
+		fIBTG = try values.decodeIfPresent(BaseModelDouble.self, forKey: .fIBTG) ?? nil
+		pROCNT = try values.decodeIfPresent(BaseModelDouble.self, forKey: .pROCNT) ?? nil
+		cHOLE = try values.decodeIfPresent(BaseModelDouble.self, forKey: .cHOLE) ?? nil
+		nA = try values.decodeIfPresent(BaseModelDouble.self, forKey: .nA) ?? nil
+		cA = try values.decodeIfPresent(BaseModelDouble.self, forKey: .cA) ?? nil
+		mG = try values.decodeIfPresent(BaseModelDouble.self, forKey: .mG) ?? nil
+		k = try values.decodeIfPresent(BaseModelDouble.self, forKey: .k) ?? nil
+		fE = try values.decodeIfPresent(BaseModelDouble.self, forKey: .fE) ?? nil
+		zN = try values.decodeIfPresent(BaseModelDouble.self, forKey: .zN) ?? nil
+		p = try values.decodeIfPresent(BaseModelDouble.self, forKey: .p) ?? nil
+		vITA_RAE = try values.decodeIfPresent(BaseModelDouble.self, forKey: .vITA_RAE) ?? nil
+		vITC = try values.decodeIfPresent(BaseModelDouble.self, forKey: .vITC) ?? nil
+		tHIA = try values.decodeIfPresent(BaseModelDouble.self, forKey: .tHIA) ?? nil
+		rIBF = try values.decodeIfPresent(BaseModelDouble.self, forKey: .rIBF) ?? nil
+		nIA = try values.decodeIfPresent(BaseModelDouble.self, forKey: .nIA) ?? nil
+		vITB6A = try values.decodeIfPresent(BaseModelDouble.self, forKey: .vITB6A) ?? nil
+		fOLDFE = try values.decodeIfPresent(BaseModelDouble.self, forKey: .fOLDFE) ?? nil
+		vITB12 = try values.decodeIfPresent(BaseModelDouble.self, forKey: .vITB12) ?? nil
+		vITD = try values.decodeIfPresent(BaseModelDouble.self, forKey: .vITD) ?? nil
+		tOCPHA = try values.decodeIfPresent(BaseModelDouble.self, forKey: .tOCPHA) ?? nil
+		vITK1 = try values.decodeIfPresent(BaseModelDouble.self, forKey: .vITK1) ?? nil
 	}
 
 }

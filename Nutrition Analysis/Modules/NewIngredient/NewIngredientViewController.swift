@@ -19,7 +19,7 @@ class NewIngredientViewController: UIViewController {
     
     private var disposeBag = DisposeBag()
 
-    var ingredient: BehaviorRelay<String>!
+    var ingredient: BehaviorRelay<IngredientModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +41,11 @@ class NewIngredientViewController: UIViewController {
     }
     
     @IBAction func addIngredientAction(_ sender: UIButton) {
-        guard let foodName = foodNameTextfield.text, let quantity = quantityTextField.text, let unit = unitTextField.text else {
+        guard let foodName = foodNameTextfield.text, let quantity = Int(quantityTextField.text ?? "0"), let unit = unitTextField.text else {
             self.dismiss(animated: true, completion: nil)
             return
         }
-        ingredient.accept("\(foodName) \(quantity) quantity \(unit) unit")
+        ingredient.accept(IngredientModel(title: foodName, quantity: quantity, unit: unit))
         self.dismiss(animated: true, completion: nil)
     }
     

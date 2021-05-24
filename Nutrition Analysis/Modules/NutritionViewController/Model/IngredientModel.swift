@@ -12,4 +12,6 @@ struct IngredientModel {
     var title: String = ""
     var quantity: Int = 0
     var unit: String = ""
+    var response: NutritionAnalyzeResponse?
+
 }

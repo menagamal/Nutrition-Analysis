@@ -43,6 +43,16 @@ class NutritionViewController: UIViewController {
         registerCell()
         bindUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 
     @IBAction func addRecipe(_ sender: UIButton) {
         viewModel?.addNewRecipe()
@@ -84,8 +94,8 @@ class NutritionViewController: UIViewController {
         }).disposed(by: disposeBag)
         
         viewModel?.output.ingredients
-            .drive(tableViewIngredient.rx.items(cellIdentifier: "IngredientTableViewCell", cellType: IngredientTableViewCell.self)) { (_, ingredient, cell) in
-                cell.configure(with: ingredient)
+            .drive(tableViewIngredient.rx.items(cellIdentifier: "IngredientTableViewCell", cellType: IngredientTableViewCell.self)) { (_, ing, cell) in
+                cell.configure(with: "\(ing.title) with \(ing.quantity) quantity, \(ing.unit)")
             }
             .disposed(by: disposeBag)
         viewModel?.output.ingredients.asObservable().subscribe({ [weak self] (event) in
@@ -129,6 +139,10 @@ class NutritionViewController: UIViewController {
                     self?.loadingIndicator?.stopLoading()
                 }
             }
+        }).disposed(by: disposeBag)
+        
+        tableViewIngredient.rx.itemSelected.bind(onNext: { [weak self] indexPath  in
+            self?.viewModel?.openDetailsWithIndexPath(index: indexPath.row)
         }).disposed(by: disposeBag)
     }
 }

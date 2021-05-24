@@ -13,9 +13,9 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct TotalNutrientsKCal : Codable {
-	let pROCNT_KCAL : PROCNT_KCAL?
-	let fAT_KCAL : FAT_KCAL?
-	let cHOCDF_KCAL : CHOCDF_KCAL?
+	let pROCNT_KCAL : BaseModelInt?
+	let fAT_KCAL : BaseModelInt?
+	let cHOCDF_KCAL : BaseModelInt?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -26,9 +26,9 @@ struct TotalNutrientsKCal : Codable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		pROCNT_KCAL = try values.decodeIfPresent(PROCNT_KCAL.self, forKey: .pROCNT_KCAL) ?? nil
-		fAT_KCAL = try values.decodeIfPresent(FAT_KCAL.self, forKey: .fAT_KCAL) ?? nil
-		cHOCDF_KCAL = try values.decodeIfPresent(CHOCDF_KCAL.self, forKey: .cHOCDF_KCAL) ?? nil
+		pROCNT_KCAL = try values.decodeIfPresent(BaseModelInt.self, forKey: .pROCNT_KCAL) ?? nil
+		fAT_KCAL = try values.decodeIfPresent(BaseModelInt.self, forKey: .fAT_KCAL) ?? nil
+		cHOCDF_KCAL = try values.decodeIfPresent(BaseModelInt.self, forKey: .cHOCDF_KCAL) ?? nil
 	}
 
 }
